@@ -1,0 +1,58 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ra-demo
+  labels:
+    app: ra-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ra-demo
+  template:
+    metadata:
+      labels:
+        app: ra-demo
+    spec:
+      containers:
+      - name: ra-demo
+        image: docker.io/thecrazyrussian/ra-demo:1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - mountPath: /persistentvolume
+          name: simple-app
+      volumes:
+        - name: simple-app
+          hostPath:
+            path: /persistentvolume
+
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ra-demo
+spec:
+  rules:
+  - host: democluster.simpleblocks.net
+    http:
+      paths:
+      - path: /ra-demo/
+        backend:
+          serviceName: ra-demo
+          servicePort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: ra-demo
+spec:
+    selector:
+      app: ra-demo
+    ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80

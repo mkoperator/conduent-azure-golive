@@ -1,2 +1,2 @@
-RESOURCEGROUP="rancher-import"
-LOCATION="eastus"
+deploy:
+	kubectl apply -f deployment.yaml 
