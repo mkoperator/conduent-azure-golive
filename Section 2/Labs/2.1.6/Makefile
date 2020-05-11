@@ -1,8 +1,7 @@
-RESOURCEGROUP="rancher-test"
+RESOURCEGROUP="rpso-rancher1"
 LOCATION="eastus"
-CLUSTERNAME="test-rancher"
+CLUSTERNAME="rpso-rancher"
 KUBERNETESVERSION="1.16.7"
-NETWORKPLUGIN="azure"
 NODECOUNT=1
 STUDENTNAME=mikhail
 TRAININGDOMAIN=simpleblocks.net
@@ -15,7 +14,7 @@ rgroup:
 	az group create --name $(RESOURCEGROUP) --location $(LOCATION)
 
 cluster:
-	az aks create --resource-group $(RESOURCEGROUP) --name $(CLUSTERNAME) --node-count $(NODECOUNT) --network-plugin $(NETWORKPLUGIN) --generate-ssh-keys	
+	az aks create --resource-group $(RESOURCEGROUP) --name $(CLUSTERNAME) --kubernetes-version $(KUBERNETESVERSION) --node-count $(NODECOUNT) --generate-ssh-keys	
 
 credentials:
 	az aks get-credentials --resource-group $(RESOURCEGROUP) --name $(CLUSTERNAME)
@@ -53,7 +52,7 @@ rancher:
   		--name rancher \
   		--namespace cattle-system \
   		--set hostname=$(STUDENTNAME).$(TRAININGDOMAIN) \
-  		--set auditLog.level=1
+  		--set auditLog.level=1 
 	kubectl -n cattle-system rollout status deploy/rancher
 
 ingress:

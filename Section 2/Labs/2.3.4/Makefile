@@ -8,7 +8,7 @@ rgroup:
 	az group create --name $(RESOURCEGROUP) --location $(LOCATION)
 
 cluster:
-	az aks create --resource-group $(RESOURCEGROUP) --name $(CLUSTERNAME) --node-count $(NODECOUNT) --network-plugin $(NETWORKPLUGIN) --generate-ssh-keys	
+	az aks create --resource-group $(RESOURCEGROUP) --name $(CLUSTERNAME) --node-count $(NODECOUNT) --kubernetes-version $(KUBERNETESVERSION) --generate-ssh-keys	
 
 credentials:
 	az aks get-credentials --resource-group $(RESOURCEGROUP) --name $(CLUSTERNAME)

@@ -14,10 +14,13 @@ This part takes a bit of time.
 
 ## Part 2: Add to Rancher via Import UI
 Part 2 is done via the Rancher UI.
+
 ### Step 2.1: Add Cluster
 From Global View select "Add Cluster"
+
 ### Step 2.2: Import Existing
 Select "Import Existing"
+
 ### Step 2.3: Select Name
 Enter Name.
 
