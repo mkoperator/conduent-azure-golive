@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2020-05-11T22:33:30Z"
+  labels:
+    app: rancher
+    chart: rancher-2.4.3
+    heritage: Tiller
+    release: rancher
+  name: rancher
+  namespace: cattle-system
+  resourceVersion: "3469"
+  selfLink: /api/v1/namespaces/cattle-system/services/rancher
+  uid: 81b456c9-021a-478a-b482-103b5b3ad11f
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: rancher
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

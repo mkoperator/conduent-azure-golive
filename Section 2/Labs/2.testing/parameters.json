@@ -1,0 +1,6 @@
+{
+	"aksServicePrincipalAppId": { "value": "6cce2f6d-6203-4f2a-b10e-3403bab7952b" },
+	"aksServicePrincipalClientSecret": { "value": "6976f4dd-39cf-446e-874d-be26f097a673" },
+	"aksServicePrincipalObjectId": { "value": "e5e85bfe-5399-4976-ad51-48462ef1c83b" },
+	"aksEnableRBAC": { "value": true }
+}

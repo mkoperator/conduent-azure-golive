@@ -18,4 +18,4 @@ Get this from your profile in Rancher UI
 `./rancher namespace create conduent`
 
 ### Step 6: Move Namespace into Project
-`./rancher namespaces move conduent <PROJECT ID>`
+`./rancher namespaces move <NAMESPACE> <PROJECT ID>`

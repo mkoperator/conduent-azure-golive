@@ -1,8 +1,8 @@
 build:
-	docker build . --tag thecrazyrussian/ra-demo2:2.6.5.1
+	docker build . --tag thecrazyrussian/ra-demo:3
 
 publish:
-	docker push thecrazyrussian/ra-demo2:2.6.5.1
+	docker push thecrazyrussian/ra-demo:3
 
 deploy:
 	kubectl apply -f deployment.yaml

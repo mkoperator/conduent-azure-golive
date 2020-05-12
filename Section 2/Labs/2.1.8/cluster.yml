@@ -1,0 +1,11 @@
+nodes:
+  - address: 20.39.32.38
+    internal_address: 10.0.0.4
+    user: azureuser
+    role: [controlplane, worker, etcd]
+    ssh_key_path: ./id_rsa
+
+ingress:
+  provider: nginx
+  options:
+    use-forwarded-headers: 'true'

@@ -1,4 +1,4 @@
-# 2.1.6 LAB: Setup Rancher on Cluster
+# 2.1.6 LAB: Setup AKS Rancher on Cluster
 This is the most involved and important lab of the course. Setting up a base Rancher 2.x installation is required to complete the course.
 
 The lab is broken up into two components, Azure Resource Creation and then Rancher Deployment. The Azure resource creation can be done via the commandline or via the portal. The Rancher Deployment part is done via helm in the commandline. Your machine should meet the course's lab requirements. 
@@ -11,15 +11,15 @@ If using the Make commands, please customise student values in `Makefile`.
 We must create an aks cluster in a new resource group in your subscription. A Single node 'Standard DS2 v2' cluster.
 
 ### Step 1.1: Create a resource group. (make rgroup)
-`az group create --name myResourceGroup --location eastus`
+`az group create --name rpso-r3 --location eastus`
 
 ### Step 1.2: Create a single node cluster. (make cluster)
-`az aks create --resource-group myResourceGroup --name myClusterName --node-count 1 --network-plugin azure --generate-ssh-keys --kubernetes-version 1.7.7`
+`az aks create --resource-group rpso-r3 --name rpso-r3 --node-count 1 --kubernetes-version 1.16.7 --generate-ssh-keys`
 
 ** ~ 10 minute runtime. **
 
 ### Step 1.3: Get AKS Credentials (make credentials)
-`az aks get-credentials --resource-group myResourceGroup --name myAKSCluster`
+`az aks get-credentials --resource-group rpso-r3 --name rpso-r3`
 
 ## Part 2 : Configure Helm and Install Rancher
 ### Step 2.1: Initialize Helm (make helm)
@@ -86,7 +86,7 @@ Install Rancher with the helm chart.
 helm install rancher-latest/rancher \
   		--name rancher \
   		--namespace cattle-system \
-  		--set hostname=myRancherDomain \
+  		--set hostname=mikhail.simpleblocks.net \
   		--set auditLog.level=1
 ```
 

@@ -1,7 +1,6 @@
-RESOURCEGROUP="rpso-rancher1"
-LOCATION="eastus"
-CLUSTERNAME="rpso-rancher"
-KUBERNETESVERSION="1.16.7"
+RESOURCEGROUP=rpso-r3
+LOCATION=eastus
+CLUSTERNAME=rpso-r3
 NODECOUNT=1
 STUDENTNAME=mikhail
 TRAININGDOMAIN=simpleblocks.net
@@ -28,12 +27,12 @@ cert-manager:
 	kubectl create namespace cert-manager
 	helm repo add jetstack https://charts.jetstack.io
 	helm repo update
+	kubectl apply --validate=false -f https://github.com/jetstack/cert-manager/releases/download/v0.14.2/cert-manager.yaml
 	helm install \
   	--name cert-manager \
   	--namespace cert-manager \
   	--version v0.14.2 \
-  	jetstack/cert-manager \
-  	--set installCRDs=true
+  	jetstack/cert-manager
 
 nginx:
 	helm repo add nginx-stable https://helm.nginx.com/stable
@@ -46,7 +45,7 @@ nginx:
 rancher:
 	helm repo add rancher-latest https://releases.rancher.com/server-charts/latest
 	helm repo update
-	kubectl create ns cattle-system
+	#kubectl create ns cattle-system
 	kubectl config set-context --current --namespace=cattle-system
 	helm install rancher-latest/rancher \
   		--name rancher \
