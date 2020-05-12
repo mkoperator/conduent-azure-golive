@@ -1,12 +1,12 @@
-RESOURCEGROUP="rancher-import2"
+RESOURCEGROUP="rancher-import5"
 LOCATION="eastus"
-CLUSTERNAME="rancher-import2"
+CLUSTERNAME="rancher-import5"
 KUBERNETESVERSION="1.16.7"
 NETWORKPLUGIN="azure"
 NODECOUNT=1
 RANCHERURL=https://mikhail.simpleblocks.net/v3
-RANCHERTOKEN=token-9pv87:99mwh68jrzdr28bmn6w472lf9l6jx2z67lwk95lvnxz6wjsjhbrpm8
-RANCHERID=c-k26hr
+RANCHERTOKEN=token-qvv8v:pv7fbgr6qwmh2s6ctnxv2g7574fw87bmbr9z7jlz42h8565rbxbmqd
+RANCHERID=c-sr7bl
 rgroup:
 	az group create --name $(RESOURCEGROUP) --location $(LOCATION)
 
@@ -22,7 +22,10 @@ rlogin:
 raddcluster:
 	rancher cluster create --import $(CLUSTERNAME)
 
+rlist:
+	rancher cluster list
+
 rimportcluster:
-	rancher cluster import c-k26hr $(CLUSTERNAME)
+	rancher cluster import $(RANCHERID) $(CLUSTERNAME)
 
 	

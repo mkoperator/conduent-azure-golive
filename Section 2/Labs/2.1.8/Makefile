@@ -34,22 +34,21 @@ helm:
 	kubectl -n kube-system  rollout status deploy/tiller-deploy
 
 cert-manager:
-	kubectl create namespace cert-manager
+	#kubectl create namespace cert-manager
 	helm repo add jetstack https://charts.jetstack.io
 	helm repo update
 	helm install \
   	--name cert-manager \
   	--namespace cert-manager \
   	--version v0.14.2 \
-  	jetstack/cert-manager \
-	--set installCRDs=true
+  	jetstack/cert-manager
 	kubectl apply --validate=false -f https://github.com/jetstack/cert-manager/releases/download/v0.14.2/cert-manager.yaml
 	
 
 rancher:
 	helm repo add rancher-latest https://releases.rancher.com/server-charts/latest
 	helm repo update
-	kubectl create ns cattle-system
+	#kubectl create ns cattle-system
 	kubectl config set-context --current --namespace=cattle-system
 	helm install rancher-latest/rancher \
   		--name rancher \

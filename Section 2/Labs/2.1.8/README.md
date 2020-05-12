@@ -2,7 +2,6 @@
 Due to socket issues with AKS Rancher without complicated networking setup. We will redo the installation as a single node RKE VM.
 
 Remove previous cluster stuff.
-`Remove-AzResourceGroup -Name "myResourceGroup" -Force -AsJob`
 
 ## Part 1 : Azure Resource Creation
 We must create a new vm on which the cluster will sit.

@@ -1,6 +1,6 @@
 nodes:
-  - address: 20.39.32.38
-    internal_address: 10.0.0.4
+  - address: 40.71.254.68
+    internal_address: 10.0.0.5
     user: azureuser
     role: [controlplane, worker, etcd]
     ssh_key_path: ./id_rsa
