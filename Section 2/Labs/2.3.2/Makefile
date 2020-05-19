@@ -1,12 +1,13 @@
-RESOURCEGROUP="aks-native"
+RESOURCEGROUP="aks-native2"
 LOCATION="eastus"
-SERVICEACCOUNT="aks-native"
-APPID=1d338d0e-8de8-4ad5-a10f-a34b01dd2e47
+SERVICEACCOUNT="aks-native2"
+APPID=cba9f24c-f63c-439d-98e8-6df87c646da1
 rgroup:
 	az group create --name $(RESOURCEGROUP) --location $(LOCATION)
 
 principal:
-	az ad sp create-for-rbac --name aks-native
+	az ad sp create-for-rbac --name aks-native2
 
 role: 
-	az role assignment create --assignee $(APPID) --role Contributor -g $(RESOURCEGROUP)
+	az role assignment create --assignee $(APPID) --role Contributor 
+	# -g $(RESOURCEGROUP)
