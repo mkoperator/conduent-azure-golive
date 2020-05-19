@@ -21,36 +21,52 @@ Usage in a utilized account could unintentionally effect existing infrastructure
 
 ## Lab Outline
 
-### 2.1 Rancher Setup
-- 2.1.6	LAB: Basic Setup Rancher on AKS
+### Section 2 : Cluster Management With Rancher
+#### 2.1 Rancher Setup
+- 2.1.6	LAB: Basic Setup Rancher on AKS (Unsolved Socket Errors)
+- 2.1.8 LAB: Create RKE on Azure Cluster
 
-### 2.3 Deploying Clusters with Rancher
+#### 2.3 Deploying Clusters with Rancher
 - 2.3.2	LAB: Add AKS Cluster via Rancher UI
 - 2.3.4	LAB: Import Cluster via Rancher UI
 
-### 2.4 RBAC /w Azure AD
+#### 2.4 RBAC /w Azure AD
 - 2.4.3	LAB: Connect AKS Rancher Azure Active Directory
 
-### 2.5 Projects & Namespaces
+#### 2.5 Projects & Namespaces
 - 2.5.1	LAB: Projects via Rancher UI
 - 2.5.2	LAB: Namespaces via Rancher UI
 - 2.5.3	LAB: Limits via Rancher UI
 
-### 2.6	PVC & Storage Classes
+#### 2.6 PVC & Storage Classes
 - 2.6.2	LAB: Add Azure Storage Class via Rancher UI
 
-## 2.7 Monitoring
+#### 2.7 Monitoring
 - 2.7.5	LAB: Setting Up Persistent Storage for Grafana & Prometheus
 
-### 3.1 Jobs
-- 3.1	LAB: Setup and run a sample job.
+### Section 3 : Kubernetes Fundamentals
+#### 3.1 Jobs
+- 3.1 LAB: Setup and run a sample job.
 
-### 3.3	CRDs
-- 3.3	LAB: Example CRD setup
+#### 3.2 Cron Jobs
+- 3.2 LAB: Setup sample cron job.
 
-### Operational Usability
+#### 3.3    CRDs
+- 3.3   LAB: Example CRD setup
+
+### Section 4 : Security
+#### 4.2 Pod Security Policies
+- 4.2.1 LAB: Update local RKE cluster to enable Pod Security Policies.
+- 4.2.2 LAB: Deploy a Deployment with Pod Security Policy.
+
+### Section 5 : Operational Usability
+#### 5.1 Debugging Workloads
 - 5.1.3.3	LAB: Add sidecar to a workload.
 
-### Out of Resource Handling
+#### 5.3 Scaling AKS
+- 5.3.1     LAB: Add KEDA to cluster
+- 5.3.2     LAB: Add HPA to Deployment
+
+#### 5.4 Out of Resource Handling
 - 5.4.1.2	LAB: Trigger scaling by adjusting metric triggers
 - 5.4.1.6	LAB: Resource prioritization, implement workloads

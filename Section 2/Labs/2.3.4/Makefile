@@ -1,6 +1,6 @@
-RESOURCEGROUP="rancher-import"
+RESOURCEGROUP="rancher-import8"
 LOCATION="eastus"
-CLUSTERNAME="rancher-import"
+CLUSTERNAME="rancher-import8"
 KUBERNETESVERSION="1.16.7"
 NETWORKPLUGIN="azure"
 NODECOUNT=3

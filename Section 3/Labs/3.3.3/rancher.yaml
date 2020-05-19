@@ -1,0 +1,7 @@
+apiVersion: "conduent.com/v1alpha1"
+kind: Customer
+metadata: 
+    name: rancher
+spec:
+    name: "Rancher Labs Inc"
+    contact: "Zach"

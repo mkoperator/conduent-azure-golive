@@ -1,0 +1,31 @@
+apiVersion: v1
+items:
+- apiVersion: cert-manager.io/v1alpha3
+  kind: Issuer
+  metadata:
+    creationTimestamp: "2020-05-12T16:32:55Z"
+    generation: 1
+    labels:
+      app: rancher
+      chart: rancher-2.4.3
+      heritage: Tiller
+      release: rancher
+    name: rancher
+    namespace: cattle-system
+    resourceVersion: "9360"
+    selfLink: /apis/cert-manager.io/v1alpha3/namespaces/cattle-system/issuers/rancher
+    uid: bf625ca0-7fe3-4298-8d2d-03b21185e2a2
+  spec:
+    ca:
+      secretName: tls-rancher
+  status:
+    conditions:
+    - lastTransitionTime: "2020-05-12T16:33:53Z"
+      message: Signing CA verified
+      reason: KeyPairVerified
+      status: "True"
+      type: Ready
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

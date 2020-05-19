@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ra-demo2
+  name: ra-demo2
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ra-demo2
+  template:
+    metadata:
+      labels:
+        app: ra-demo2
+    spec:
+      containers:
+      - image: docker.io/thecrazyrussian/ra-demo:1
+        imagePullPolicy: Always
+        name: ra-demo2
+        ports:
+        - containerPort: 80
+          name: 80tcp2
+          protocol: TCP
+        resources: {}
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+

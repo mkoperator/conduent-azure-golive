@@ -2,21 +2,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ra-demo
+  name: ra-demo2
   labels:
-    app: ra-demo
+    app: ra-demo2
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ra-demo
+      app: ra-demo2
   template:
     metadata:
       labels:
-        app: ra-demo
+        app: ra-demo2
     spec:
       containers:
-      - name: ra-demo
+      - name: ra-demo2
         image: docker.io/thecrazyrussian/ra-demo:1
         imagePullPolicy: Always
         ports:
