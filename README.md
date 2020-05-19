@@ -13,6 +13,7 @@ This lab has been tested with the following application versions, it may work wi
 - rancher cli 2.3
 - kubectl 2.3.2
 - docker 19.03
+- rke  >= 1.0.8 
 
 ### Hosting Environment
 Full Access to Empty Azure Account *
@@ -23,11 +24,13 @@ Usage in a utilized account could unintentionally effect existing infrastructure
 
 ### Section 2 : Cluster Management With Rancher
 #### 2.1 Rancher Setup
-- 2.1.8 LAB: Create RKE on Azure Cluster
+- 2.1.6 LAB: Create RKE on Azure Cluster
 
 #### 2.3 Deploying Clusters with Rancher
 - 2.3.2	LAB: Add AKS Cluster via Rancher UI
 - 2.3.4	LAB: Import Cluster via Rancher UI
+- 2.3.5 LAB: Import Cluster via Rancher CLI
+- 2.3.6 LAB: Add RKE Cluster via Rancher UI
 
 #### 2.4 RBAC /w Azure AD
 - 2.4.3	LAB: Connect AKS Rancher Azure Active Directory
@@ -51,7 +54,7 @@ Usage in a utilized account could unintentionally effect existing infrastructure
 - 3.2 LAB: Setup sample cron job.
 
 #### 3.3    CRDs
-- 3.3   LAB: Example CRD setup
+- 3.3 LAB: Example CRD setup
 
 ### Section 4 : Security
 #### 4.2 Pod Security Policies
@@ -60,12 +63,12 @@ Usage in a utilized account could unintentionally effect existing infrastructure
 
 ### Section 5 : Operational Usability
 #### 5.1 Debugging Workloads
-- 5.1.3.3	LAB: Add sidecar to a workload.
+- 5.1.3.3 LAB: Add sidecar to a workload.
 
 #### 5.3 Scaling AKS
-- 5.3.1     LAB: Add KEDA to cluster
-- 5.3.2     LAB: Add HPA to Deployment
+- 5.3.1 LAB: Add KEDA to cluster
+- 5.3.2 LAB: Add HPA to Deployment
 
 #### 5.4 Out of Resource Handling
-- 5.4.1.2	LAB: Trigger scaling by adjusting metric triggers
-- 5.4.1.6	LAB: Resource prioritization, implement workloads
+- 5.4.1.2 LAB: Trigger scaling by adjusting metric triggers
+- 5.4.1.6 LAB: Resource prioritization, implement workloads
