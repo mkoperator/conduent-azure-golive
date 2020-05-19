@@ -23,7 +23,6 @@ Usage in a utilized account could unintentionally effect existing infrastructure
 
 ### Section 2 : Cluster Management With Rancher
 #### 2.1 Rancher Setup
-- 2.1.6	LAB: Basic Setup Rancher on AKS (Unsolved Socket Errors)
 - 2.1.8 LAB: Create RKE on Azure Cluster
 
 #### 2.3 Deploying Clusters with Rancher
