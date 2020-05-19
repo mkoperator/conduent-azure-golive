@@ -1,6 +1,6 @@
-RESOURCEGROUP=rpso-rke2
+RESOURCEGROUP=rpso-rancher
 LOCATION=eastus
-CLUSTERNAME=rpso-rke2
+CLUSTERNAME=rpso-rancher
 NODECOUNT=1
 STUDENTNAME=mikhail
 TRAININGDOMAIN=simpleblocks.net

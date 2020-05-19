@@ -1,4 +1,4 @@
-# 2.1.8 LAB: Setup RKE Rancher on Cluster
+# 2.1.6 LAB: Setup RKE Rancher on Cluster
 Due to socket issues with AKS Rancher without complicated networking setup. We will redo the installation as a single node RKE VM.
 
 Remove previous cluster stuff.
@@ -12,7 +12,7 @@ We must create a new vm on which the cluster will sit.
 ### Step 1.2: Create Local SSH Key (make genkey)
 
 ### Step 1.3: Create a single node vm. (make vmss)
-az vmss create --resource-group $(RESOURCEGROUP) --name $(CLUSTERNAME) --image UbuntuLTS --upgrade-policy-mode manual --admin-username azureuser --generate-ssh-keys
+az vmss create --resource-group $(RESOURCEGROUP) --name $(CLUSTERNAME) --image UbuntuLTS --instance-count $(NODECOUNT) --upgrade-policy-mode manual  --public-ip-per-vm --admin-username azureuser --ssh-key-values id_rsa.pub --custom-data azureinit.yaml
 
 ### Step 1.4: Add Load Balancer Rules (make lb)
 az network lb rule create--resource-group $(RESOURCEGROUP) --name $(CLUSTERNAME)RuleWeb1 --lb-name $(CLUSTERNAME)LB --backend-pool-name $(CLUSTERNAME)LBBEPool --backend-port 80 --frontend-ip-name loadBalancerFrontEnd --frontend-port 80 --protocol tcp

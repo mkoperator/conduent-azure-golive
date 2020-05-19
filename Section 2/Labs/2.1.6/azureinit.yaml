@@ -1,4 +1,6 @@
+#cloud-config
+package_upgrade: true
+packages:
+    - docker.io
 runcmd:
-    - [ apt-get, update, -y]
-    - [ apt, install, -y, docker.io ]
-    - [ usermod, -aG,  docker, azureuser ]
+ - usermod -aG docker azureuser

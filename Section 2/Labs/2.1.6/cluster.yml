@@ -1,5 +1,5 @@
 nodes:
-  - address: 40.71.254.68
+  - address: 52.170.79.74
     internal_address: 10.0.0.5
     user: azureuser
     role: [controlplane, worker, etcd]
@@ -7,7 +7,9 @@ nodes:
     
 services:
     kube-api:
-      pod_security_policy: true
+      pod_security_policy: false
+      ## Set true for Lab 
+      # pod_security_policy: true
       service_node_port_range: 30000-32767
         
 ingress:
