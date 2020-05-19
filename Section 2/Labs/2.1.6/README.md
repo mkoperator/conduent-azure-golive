@@ -53,13 +53,13 @@ we need to update internal and external ip in cluster.yml
 helm install \
   --name cert-manager \
   --namespace cert-manager \
-  --version v0.14.2 \
+  --version v0.15.0 \
   jetstack/cert-manager \
   --set installCRDs=true
-7
+
 ```
 
-### Step 2.3: Install Rancher (rancher)
+### Step 2.3: Install Rancher (make rancher)
 #### Step 2.3.1: Add Rancher Catalog and Update
 	`helm repo add rancher-latest https://releases.rancher.com/server-charts/latest`
 	`helm repo update`
@@ -79,3 +79,8 @@ helm install rancher-latest/rancher \
   		--set hostname=mikhail.simpleblocks.net \
   		--set auditLog.level=1
 ```
+
+
+
+### NOTE: Troubleshooting
+`kubectl edit namespace annoying-namespace-to-delete`

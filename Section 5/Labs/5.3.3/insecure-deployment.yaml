@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: insecured
+  name: insecured
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: insecured
+  template:
+    metadata:
+      labels:
+        app: insecured
+    spec:
+      containers:
+      - image: docker.io/thecrazyrussian/ra-demo:1
+        imagePullPolicy: Always
+        name: insecured
+        ports:
+        - containerPort: 80
+          name: 80tcp2
+          protocol: TCP
+        readinessProbe:
+          failureThreshold: 3
+          initialDelaySeconds: 10
+          periodSeconds: 2
+          successThreshold: 2
+          tcpSocket:
+            port: 80
+          timeoutSeconds: 2
+        resources: 
+          limits:
+            cpu: 200m
+          requests:
+            cpu: 200m
+        securityContext:
+          privileged: true
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      
+

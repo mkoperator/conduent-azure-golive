@@ -1,16 +1,15 @@
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: hpa-123
-  namespace: default
+  annotations:
+    field.cattle.io/displayName: hpa-insecure
+  name: hpa-insecure
 spec:
   maxReplicas: 10
-  minReplicas: 1
+  minReplicas: 2
   scaleTargetRef:
     apiVersion: apps/v1beta2
     kind: Deployment
-    name: ra-demo2
-  targetCPUUtilizationPercentage: 1
-status:
-  currentReplicas: 1
-  desiredReplicas: 0
+    name: insecured
+  targetCPUUtilizationPercentage: 10
+

@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: validate-psp
+  labels:
+    app: validate-psp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: validate-psp
+  template:
+    metadata:
+      labels:
+        app: validate-psp
+    spec:
+      containers:
+      - name: validate-psp
+        image: docker.io/thecrazyrussian/ra-demo:1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80

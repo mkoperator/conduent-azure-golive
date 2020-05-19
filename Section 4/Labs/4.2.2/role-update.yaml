@@ -1,0 +1,14 @@
+---
+  apiVersion: rbac.authorization.k8s.io/v1
+  kind: Role
+  metadata:
+    name: default-psp-role
+  rules:
+  - apiGroups:
+    - extensions
+    resourceNames:
+    - restricted-psp
+    resources:
+    - podsecuritypolicies
+    verbs:
+    - use

@@ -66,8 +66,8 @@ Usage in a utilized account could unintentionally effect existing infrastructure
 - 5.1.3.3 LAB: Add sidecar to a workload.
 
 #### 5.3 Scaling AKS
-- 5.3.1 LAB: Add KEDA to cluster
-- 5.3.2 LAB: Add HPA to Deployment
+- 5.3.2 LAB: Add KEDA to cluster
+- 5.3.4 LAB: Add HPA to Deployment
 
 #### 5.4 Out of Resource Handling
 - 5.4.1.2 LAB: Trigger scaling by adjusting metric triggers

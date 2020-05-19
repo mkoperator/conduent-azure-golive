@@ -34,15 +34,14 @@ helm:
 	kubectl -n kube-system  rollout status deploy/tiller-deploy
 
 cert-manager:
-	#kubectl create namespace cert-manager
 	helm repo add jetstack https://charts.jetstack.io
 	helm repo update
+	kubectl apply --validate=false -f https://github.com/jetstack/cert-manager/releases/download/v0.14.2/cert-manager.yaml
 	helm install \
   	--name cert-manager \
   	--namespace cert-manager \
   	--version v0.14.2 \
   	jetstack/cert-manager
-	kubectl apply --validate=false -f https://github.com/jetstack/cert-manager/releases/download/v0.14.2/cert-manager.yaml
 	
 
 rancher:
@@ -54,5 +53,6 @@ rancher:
   		--name rancher \
   		--namespace cattle-system \
   		--set hostname=$(STUDENTNAME).$(TRAININGDOMAIN) \
-  		--set auditLog.level=1 
+  		--set auditLog.level=1 \
+		--set tls=external
 	kubectl -n cattle-system rollout status deploy/rancher
