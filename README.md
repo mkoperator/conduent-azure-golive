@@ -26,6 +26,9 @@ Usage in a utilized account could unintentionally effect existing infrastructure
 #### 2.1 Rancher Setup
 - 2.1.6 LAB: Create RKE on Azure Cluster
 
+#### 2.2 Rancher CLI
+- 2.2.2 LAB: Adding and Moving Namespaces
+
 #### 2.3 Deploying Clusters with Rancher
 - 2.3.2	LAB: Add AKS Cluster via Rancher UI
 - 2.3.4	LAB: Import Cluster via Rancher UI
@@ -66,9 +69,7 @@ Usage in a utilized account could unintentionally effect existing infrastructure
 - 5.1.3.3 LAB: Add sidecar to a workload.
 
 #### 5.3 Scaling AKS
-- 5.3.2 LAB: Add KEDA to cluster
-- 5.3.4 LAB: Add HPA to Deployment
+- 5.3.3 LAB: Add HPA to Deployment
 
 #### 5.4 Out of Resource Handling
-- 5.4.1.2 LAB: Trigger scaling by adjusting metric triggers
-- 5.4.1.6 LAB: Resource prioritization, implement workloads
+- 5.4.1.5 LAB: Resource prioritization, implement workloads

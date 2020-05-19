@@ -36,11 +36,11 @@ helm:
 cert-manager:
 	helm repo add jetstack https://charts.jetstack.io
 	helm repo update
-	kubectl apply --validate=false -f https://github.com/jetstack/cert-manager/releases/download/v0.14.2/cert-manager.yaml
+	kubectl apply --validate=false -f https://github.com/jetstack/cert-manager/releases/download/v0.14.3/cert-manager.yaml
 	helm install \
   	--name cert-manager \
   	--namespace cert-manager \
-  	--version v0.14.2 \
+  	--version v0.14.3 \
   	jetstack/cert-manager
 	
 

@@ -1,4 +1,4 @@
-# 5.3.4 Deploy Autoscaler
+# 5.3.3 Deploy Autoscaler
 ## Step 1:  Add HPA to insecure deployment
 `kubectl apply -f hpa.yaml` nothing hpapens.
 ## Step 2: Add cpu limits to deployment.

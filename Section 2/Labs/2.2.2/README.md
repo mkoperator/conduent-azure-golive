@@ -19,5 +19,9 @@ Get this from your profile in Rancher UI
 
 ### Step 6: Move Namespace into Project
 # 2.2.2 LAB: Project Namespaces
-
-`./rancher namespaces move <NAMESPACE> <PROJECT ID>`
+## Step 1: Download Rancher CLI
+## Step 2: Get Rancher Token and Server URL
+## Step 3: Login
+## Step 3: dd Project
+## Step 4: Add Namespace
+## Step 5: Move Namespace to project
