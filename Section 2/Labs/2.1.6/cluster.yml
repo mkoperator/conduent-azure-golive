@@ -7,7 +7,7 @@ nodes:
     
 services:
     kube-api:
-      # pod_security_policy: false
+      #pod_security_policy: false
       ## Set true for Lab 
       pod_security_policy: true
       service_node_port_range: 30000-32767

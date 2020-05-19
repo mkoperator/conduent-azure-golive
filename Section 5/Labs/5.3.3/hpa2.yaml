@@ -2,8 +2,8 @@ apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
   annotations:
-    field.cattle.io/displayName: hpa-insecure2
-  name: hpa-insecure2
+    field.cattle.io/displayName: hpa-insecure
+  name: hpa-insecure
 spec:
   maxReplicas: 10
   minReplicas: 5

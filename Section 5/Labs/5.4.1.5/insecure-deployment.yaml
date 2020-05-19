@@ -22,14 +22,6 @@ spec:
         - containerPort: 80
           name: 80tcp2
           protocol: TCP
-        readinessProbe:
-          failureThreshold: 3
-          initialDelaySeconds: 10
-          periodSeconds: 2
-          successThreshold: 2
-          tcpSocket:
-            port: 80
-          timeoutSeconds: 2
         resources: 
           limits:
             cpu: 200m
