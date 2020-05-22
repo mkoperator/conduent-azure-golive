@@ -1,8 +1,8 @@
-RESOURCEGROUP=rpso-rancher
+RESOURCEGROUP=rke-rancher
 LOCATION=eastus
-CLUSTERNAME=rpso-rancher
+CLUSTERNAME=rke-rancher
 NODECOUNT=1
-STUDENTNAME=mikhail
+STUDENTNAME=rancher
 TRAININGDOMAIN=simpleblocks.net
 HOSTNAME=$(STUDENTNAME).$(TRAININGDOMAIN)
 
@@ -42,7 +42,7 @@ cert-manager:
   	--namespace cert-manager \
   	--version v0.14.3 \
   	jetstack/cert-manager
-	
+
 
 rancher:
 	helm repo add rancher-latest https://releases.rancher.com/server-charts/latest
